@@ -1,0 +1,239 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body Style */
+body {
+    background: #222; /* Dark background */
+    color: #fff; /* Text color for contrast */
+}
+
+/* Card Component */
+.card {
+    width: 90%;
+    max-width: 470px;
+    margin: 100px auto;
+    padding: 40px 35px;
+    background: linear-gradient(135deg, #00feba, #5b548a); /* Gradient background */
+    color: #ffc; /* Light yellow text */
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Elevated look */
+}
+
+/* Search Bar */
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 15px;
+    background-color: #f9f9f9; /* Light background */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 50px; /* Fully rounded */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Search Input Fields */
+.search input[type="text"],
+.search input[type="date"] {
+    flex-grow: 1;
+    padding: 12px 40px 12px 20px; /* Space for icons */
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 50px;
+    font-size: 15px;
+    color: #333; /* Dark text */
+    background-color: #fff; /* White background */
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus Effect for Inputs */
+.search input[type="text"]:focus,
+.search input[type="date"]:focus {
+    border-color: #4c93af;
+    box-shadow: 0 0 5px rgba(76, 147, 175, 0.5); /* Highlight effect */
+}
+
+/* Date Picker Wrapper with Icon */
+.date-picker-wrapper {
+    position: relative;
+    flex-grow: 1;
+}
+
+/* Date Picker Icon */
+.date-picker-wrapper::after {
+    content: '\1F4C5'; /* Calendar icon */
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #888; /* Subtle icon color */
+    pointer-events: none; /* Prevent interaction */
+}
+
+/* Search Button */
+.search button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 50px;
+    background-color: #4c93af; /* Primary color */
+    color: #fff; /* White text */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover and Active Effects for Button */
+.search button:hover {
+    background-color: #3b7d94;
+    transform: scale(1.05); /* Subtle zoom */
+}
+
+.search button:active {
+    background-color: #346b80;
+    transform: scale(0.98); /* Pressed effect */
+}
+
+/* Search Icon Inside Button */
+.search button::before {
+    content: '\1F50D'; /* Magnifying glass */
+    margin-right: 2px;
+    font-size: 16px;
+}
+
+/* Weather Section */
+.weather {
+    display: none; /* Hidden by default */
+    margin-top: 30px;
+}
+
+.weather-icon {
+    width: 170px;
+}
+
+.weather h1 {
+    font-size: 80px;
+    font-weight: 500;
+}
+
+.weather h2 {
+    font-size: 45px;
+    font-weight: 400;
+    margin-top: -10px;
+}
+
+/* Weather Details */
+.details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 50px;
+}
+
+.col {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.col img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.humidity,
+.wind {
+    font-size: 28px;
+    margin-top: -6px;
+}
+
+/* Error Message */
+.error {
+    text-align: left;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none; /* Hidden by default */
+}
+
+/* Link Section */
+.wikipedia-link,
+.google-search-link,
+.google-map-link {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* Link Icons */
+.wikipedia-link img,
+.google-search-link img,
+.google-map-link img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effect for Icons */
+.wikipedia-link img:hover,
+.google-search-link img:hover,
+.google-map-link img:hover {
+    transform: scale(1.1);
+}
+
+/* Link Styling */
+.wikipedia-link a,
+.google-search-link a,
+.google-map-link a {
+    color: #0066cc; /* Blue */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+/* Hover Effect for Links */
+.wikipedia-link a:hover,
+.google-search-link a:hover,
+.google-map-link a:hover {
+    color: #005bb5; /* Darker blue */
+    text-decoration: underline;
+}
+
+/* Google-Specific Link Colors */
+.google-search-link a {
+    color: hsl(254, 78%, 52%);
+}
+
+.google-map-link a {
+    color: #4242f4;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 600px) {
+    .wikipedia-link a,
+    .google-search-link a,
+    .google-map-link a {
+        font-size: 14px;
+    }
+
+    .wikipedia-link img,
+    .google-search-link img,
+    .google-map-link img {
+        width: 20px;
+        height: 20px;
+    }
+}
